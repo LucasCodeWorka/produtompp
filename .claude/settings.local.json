@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e:*)",
+      "Bash(powershell -Command \"netstat -ano | Select-String '':8000''\")",
+      "Bash(taskkill:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

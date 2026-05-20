@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  
+  --sidebar-bg: #f8fafc;
+  --sidebar-border: #e2e8f0;
+  
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  
+  --accent-primary: #2563eb;
+  --accent-secondary: #6366f1;
+  --accent-success: #059669;
+  --accent-warning: #d97706;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #020617; /* Navy super dark */
+    --foreground: #f8fafc;
+    
+    --sidebar-bg: #0f172a;
+    --sidebar-border: #1e293b;
+    
+    --card-bg: #0f172a;
+    --card-border: #1e293b;
+    
+    --accent-primary: #3b82f6;
+    --accent-secondary: #818cf8;
+    --accent-success: #10b981;
+    --accent-warning: #f59e0b;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Utility classes for consistent theme colors */
+.bg-app-card { background-color: var(--card-bg); }
+.border-app { border-color: var(--card-border); }
+.text-app-muted { color: #94a3b8; }
