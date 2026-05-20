@@ -74,7 +74,7 @@ export default function DProdutoPage() {
               </tr>
             </thead>
             <tbody>
-              {data.map((item, idx) => (
+              {data.slice(0, 100).map((item, idx) => (
                 <tr key={idx} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
                   <td className="px-4 py-3 font-mono text-slate-400">{item.cd_produto}</td>
                   <td className="px-4 py-3 font-medium">{item.ds_produto}</td>
@@ -85,9 +85,8 @@ export default function DProdutoPage() {
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-          <p className="text-slate-400 text-sm mt-4">Mostrando 100 de {data.length} registros</p>
+        {data.length > 100 && (
+          <p className="text-slate-400 text-sm p-4">Mostrando 100 de {data.length} registros</p>
         )}
       </div>
     </div>
